@@ -33,3 +33,17 @@ dialog{overscroll-behavior:contain;max-height:calc(100svh - 36px - env(safe-area
 .bottom-nav a.active:after{display:none}.bottom-nav a.active .dock-icon{opacity:1;transform:translateY(-1px)}
 .bottom-nav a.active .icon-paper{fill:#fff0cc}.bottom-nav a.active .icon-accent{fill:#f4c46b}
 .bottom-nav a:active .dock-icon{transform:translateY(1px)}
+
+/* Confirmed bowling teams and the supplied allocation record. */
+.teams .team{padding-left:8px;padding-right:8px}
+.team .team-captain{font-size:10px;color:#dce4c6;margin-top:5px}
+.team .team-members{display:grid;gap:6px;width:100%;margin:14px 0;padding-top:12px;border-top:1px solid #6c8d6966;font-size:12px;color:#edf0df;font-variant-numeric:tabular-nums}
+.team-members>span{display:flex;justify-content:space-between;gap:4px}
+.team-members>span>span:last-child{color:#c3cdaa}
+.team .team-total{width:100%;border-top:1px solid #6c8d6966;padding-top:10px;font-size:10px;color:#b6c5aa}
+.team-total b{display:block;color:#f2d99d;font-size:19px;font-variant-numeric:tabular-nums}
+.team-evidence{border:1px solid #6c8d69;background:#193e35;padding:0 14px;margin:20px 0;color:#dce4c6;font-size:12px}
+.team-evidence summary{cursor:pointer;padding:14px 0;color:#f2d99d;font-weight:600;min-height:48px}
+.team-evidence p{margin:0 0 12px}
+.team-evidence img{width:100%;height:auto;border:1px solid #6c8d6966}
+.team-evidence figcaption a{display:block;padding:12px 0;min-height:44px;text-underline-offset:3px}

@@ -1,11 +1,11 @@
 'use strict';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
-const players=[{id:0,name:'연택이'},{id:1,name:'성훈이'},{id:2,name:'용현이'},{id:3,name:'은수'},{id:4,name:'규춘이'},{id:5,name:'희원이'},{id:6,name:'준성이'},{id:11,name:'동규'},{id:10,name:'유진이'},{id:7,name:'주현이'},{id:9,name:'근영이',guide:true},{id:8,name:'지훈이',guide:true}];
+const players=[{id:0,name:'연택이'},{id:1,name:'성훈이'},{id:2,name:'용현이'},{id:3,name:'은수'},{id:4,name:'규준이'},{id:5,name:'희원이'},{id:6,name:'준성이'},{id:11,name:'동규'},{id:10,name:'유진이'},{id:7,name:'주현이'},{id:9,name:'근영이',guide:true},{id:8,name:'지훈이',guide:true}];
 const dialogueData={
 intro:[{who:9,text:'안녕하세요, 근영이에요. 이번 수요일은 밖에서 만나요! 책 읽고 점심 먹은 다음, 볼링장으로 갈 거예요.'},{who:8,text:'지훈이에요. 좋은 자리에 앉으려면 10시 전에 도착해야 해요. 주차랑 길찾기는 각 장소 아래에 넣어뒀어요.'}],
 book:[{who:8,text:'책방 안에 먹거리도 있어요. 취향껏 골라 먹으면서 책 읽으면 돼요. 배고픈데 점심까지 꾹 참을 필요는 없어요!'},{who:9,text:'다만 1시에는 파스타가 기다리고 있습니다. 점심 먹을 배는 조금 남겨두는 걸로요.'},{who:8,text:'꼭 한 권을 다 읽을 필요는 없어요. 평소 안 보던 만화나 아트북도 한번 펼쳐보세요. 재미있으면 저한테도 추천해 주세요!'}],
 lunch:[{who:9,text:'점심은 스콜라파스타예요. 메뉴가 꽤 많아서 미리 봐두면 좋겠어요. 먹고 싶은 거 하나씩 골라 와요!'},{who:8,text:'하트를 누르면 내 메뉴 후보로 표시돼요. 주문이 들어가는 건 아니니 편하게 골라봐요. 새로고침하면 지워지는 건 참고해 주세요.'}],
-bowling:[{who:8,text:'은수팀, 주현팀, 유진팀으로 나눠서 칩니다. 팀장 포함 네 명씩이에요. 볼링이 오랜만이어도 괜찮아요. 응원은 크게 부탁해요!'},{who:9,text:'우승팀 네 명한테는 어마어마한 선물이 있다고 합니다. 제가 이렇게 말해버렸으니 이제 준비하는 사람만 큰일 났네요.'},{who:8,text:'우리 팀이 우승을 못 해도 개인상은 노려볼 수 있어요. 나머지 두 팀에서 점수가 가장 높은 한 분에게 「개천에서 난 용」 상을 드려요.'}],
+bowling:[{who:8,text:'에버리지를 기준으로 A팀 주현팀, B팀 은수팀, C팀 유진팀을 편성했어요. 팀장 포함 네 명씩, 아래에서 내 팀을 확인해 보세요. 응원은 크게 부탁해요!'},{who:9,text:'우승팀 네 명한테는 어마어마한 선물이 있다고 합니다. 제가 이렇게 말해버렸으니 이제 준비하는 사람만 큰일 났네요.'},{who:8,text:'우리 팀이 우승을 못 해도 개인상은 노려볼 수 있어요. 나머지 두 팀에서 점수가 가장 높은 한 분에게 「개천에서 난 용」 상을 드려요.'}],
 awards:[{who:9,text:'선물 받을 사람이 누가 될지 궁금하네요. 아래 상자를 누르면 시상 내용을 볼 수 있어요.'},{who:8,text:'우승팀 네 명에 개인상 한 명, 모두 다섯 명이에요. 상품은 당일 공개할게요. 일단 기대는 해주세요!'}]
 };
 const places={
@@ -66,8 +66,8 @@ $$('[data-route]').forEach(b=>b.addEventListener('click',()=>{const p=places[b.d
  }));
 }));
 $('#copy-address').addEventListener('click',()=>copyText(activePlace.address));
-$('#copy-guide-link').addEventListener('click',()=>copyText(nav.SITE_URL+'/?v=3','안내 페이지 주소를 복사했어요. Safari나 Chrome의 주소창에 붙여넣어 주세요.'));
-$('#share-link').addEventListener('click',()=>copyText(nav.SITE_URL+'/?v=3','안내 링크를 복사했어요. 단톡방에 붙여넣어 주세요.'));
+$('#copy-guide-link').addEventListener('click',()=>copyText(nav.SITE_URL+'/?v=4','안내 페이지 주소를 복사했어요. Safari나 Chrome의 주소창에 붙여넣어 주세요.'));
+$('#share-link').addEventListener('click',()=>copyText(nav.SITE_URL+'/?v=4','안내 링크를 복사했어요. 단톡방에 붙여넣어 주세요.'));
 $('#menu-image-open').addEventListener('click',()=>$('#menu-dialog').showModal());
 $$('.close-modal').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));$$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()}}));
 let ticking=false;function progress(){const doc=document.documentElement;const total=doc.scrollHeight-innerHeight;$('#reading-progress').style.width=(total>0?scrollY/total*100:0)+'%';const ids=['schedule','library','lunch','bowling','awards'];let active='';for(const id of ids)if($('#'+id).getBoundingClientRect().top<innerHeight*.45)active=id;$$('[data-nav]').forEach(a=>{a.classList.toggle('active',a.dataset.nav===active);a.dataset.nav===active?a.setAttribute('aria-current','location'):a.removeAttribute('aria-current')});ticking=false}addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(progress);ticking=true}},{passive:true});addEventListener('resize',progress);progress();
