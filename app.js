@@ -1,6 +1,6 @@
 'use strict';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
-const players=[{id:0,name:'연택이'},{id:1,name:'성훈이'},{id:2,name:'용현이'},{id:3,name:'은수'},{id:4,name:'규준이'},{id:5,name:'희원이'},{id:6,name:'준성이'},{id:11,name:'동규'},{id:10,name:'유진이'},{id:7,name:'주현이'},{id:9,name:'근영이',guide:true},{id:8,name:'지훈이',guide:true}];
+const players=[{id:0,name:'연택이'},{id:1,name:'성훈이'},{id:2,name:'용현이'},{id:3,name:'은수'},{id:4,name:'규춘이'},{id:5,name:'희원이'},{id:6,name:'준성이'},{id:11,name:'동규'},{id:10,name:'유진이'},{id:7,name:'주현이'},{id:9,name:'근영이',guide:true},{id:8,name:'지훈이',guide:true}];
 const dialogueData={
 intro:[{who:9,text:'안녕하세요, 근영이에요. 이번 수요일은 밖에서 만나요! 책 읽고 점심 먹은 다음, 볼링장으로 갈 거예요.'},{who:8,text:'지훈이에요. 좋은 자리에 앉으려면 10시 전에 도착해야 해요. 주차랑 길찾기는 각 장소 아래에 넣어뒀어요.'}],
 book:[{who:8,text:'책방 안에 먹거리도 있어요. 취향껏 골라 먹으면서 책 읽으면 돼요. 배고픈데 점심까지 꾹 참을 필요는 없어요!'},{who:9,text:'다만 1시에는 파스타가 기다리고 있습니다. 점심 먹을 배는 조금 남겨두는 걸로요.'},{who:8,text:'꼭 한 권을 다 읽을 필요는 없어요. 평소 안 보던 만화나 아트북도 한번 펼쳐보세요. 재미있으면 저한테도 추천해 주세요!'}],
@@ -66,8 +66,8 @@ $$('[data-route]').forEach(b=>b.addEventListener('click',()=>{const p=places[b.d
  }));
 }));
 $('#copy-address').addEventListener('click',()=>copyText(activePlace.address));
-$('#copy-guide-link').addEventListener('click',()=>copyText(nav.SITE_URL+'/?v=4','안내 페이지 주소를 복사했어요. Safari나 Chrome의 주소창에 붙여넣어 주세요.'));
-$('#share-link').addEventListener('click',()=>copyText(nav.SITE_URL+'/?v=4','안내 링크를 복사했어요. 단톡방에 붙여넣어 주세요.'));
+$('#copy-guide-link').addEventListener('click',()=>copyText(nav.SITE_URL+'/?v=6','안내 페이지 주소를 복사했어요. Safari나 Chrome의 주소창에 붙여넣어 주세요.'));
+$('#share-link').addEventListener('click',()=>copyText(nav.SITE_URL+'/?v=6','안내 링크를 복사했어요. 단톡방에 붙여넣어 주세요.'));
 $('#menu-image-open').addEventListener('click',()=>$('#menu-dialog').showModal());
 $$('.close-modal').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));$$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()}}));
 let ticking=false;function progress(){const doc=document.documentElement;const total=doc.scrollHeight-innerHeight;$('#reading-progress').style.width=(total>0?scrollY/total*100:0)+'%';const ids=['schedule','library','lunch','bowling','awards'];let active='';for(const id of ids)if($('#'+id).getBoundingClientRect().top<innerHeight*.45)active=id;$$('[data-nav]').forEach(a=>{a.classList.toggle('active',a.dataset.nav===active);a.dataset.nav===active?a.setAttribute('aria-current','location'):a.removeAttribute('aria-current')});ticking=false}addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(progress);ticking=true}},{passive:true});addEventListener('resize',progress);progress();
