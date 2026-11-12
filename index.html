@@ -25,7 +25,7 @@
   <meta name="twitter:description" content="10시 전까지 그래픽바이대신에서 만나요. 점심 메뉴와 볼링대회, 주차와 길찾기를 확인하세요.">
   <meta name="twitter:image" content="https://colinjeong.github.io/platform-team-day/assets/share-card-v2.jpg">
   <link rel="icon" href="assets/player-9.png"><link rel="apple-touch-icon" href="assets/player-9.png"><link rel="preload" as="image" href="assets/hero.webp">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.4/kakao.min.js" integrity="sha384-BGX7Wb16GmRFagri4bLJV2DgipVZaU2AI812GZtHtHzzDQJnfHasDXN5houxv45w" crossorigin="anonymous" async></script>
   <script src="navigation.js?v=3" defer></script><script src="app.js?v=4" defer></script>
 </head>
@@ -108,8 +108,14 @@
           </button>
         </div><p class="team-hint" id="team-hint" aria-live="polite">우리 팀 카드를 눌러 응원을 보내 보세요! ✦</p>
         <div class="rules-strip"><strong>에버리지 기준으로 편성했어요</strong><p>팀장 1명과 팀원 3명, 각 팀 4명씩이에요. 팀장 세 분은 편성용으로 모두 50점을 적용했어요. 위 점수는 경기 결과가 아닌 편성 기준 에버리지예요.</p></div>
+        <aside class="bowling-warning" aria-labelledby="bowling-warning-title">
+          <div class="warning-heading"><span class="warning-skull" aria-hidden="true">☠️</span><div><span class="warning-tag">볼링 점수 보정 안내</span><h4 id="bowling-warning-title">숨은 고수 주의보!</h4></div></div>
+          <p>팀 점수가 예상 합계보다 <strong>30%를 초과하면</strong><br>실제 팀 총점에서 <strong>10% 감점</strong>해요.</p>
+          <div class="warning-thresholds"><span>A·C팀 <b>442점 초과</b></span><span>B팀 <b>377점 초과</b></span></div>
+          <p class="warning-note">여러 게임을 치면 팀의 게임당 평균으로 기준을 비교해요. 기준과 같으면 감점하지 않아요.</p>
+        </aside>
         <details class="team-evidence"><summary>조편성 증적자료 보기</summary><p>확정 명단과 예상 합계를 정리한 자료예요.</p><figure><a href="assets/bowling-team-evidence.jpg" target="_blank" rel="noopener"><img src="assets/bowling-team-evidence.jpg" alt="팀장 모두 50점 적용. A팀 박주현·유연택·김성훈·조규준 340점, B팀 여은수·김동규·최근영·정희원 290점, C팀 김유진·김용현·정지훈·박준성 340점의 조편성 근거 자료" loading="lazy"></a><figcaption><a href="assets/bowling-team-evidence.jpg" target="_blank" rel="noopener">원본 사진 크게 보기 ↗</a></figcaption></figure></details>
-        <div class="rules-strip"><strong>경기 규칙 안내</strong><p>게임 수, 점수 계산 방법과 동점 처리 기준은 시작 전에 안내할게요.</p></div>
+        <div class="rules-strip"><strong>경기 규칙 안내</strong><p>팀 점수에는 위 보정 규칙을 적용해요. 게임 수와 동점 처리 기준은 시작 전에 안내할게요.</p></div>
         <a class="pixel-button gold" href="#awards">우승하면 뭐가 기다릴까? <span>↓</span></a>
         <div class="place-info" data-place="bowl"></div>
       </div>

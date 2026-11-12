@@ -47,3 +47,13 @@ dialog{overscroll-behavior:contain;max-height:calc(100svh - 36px - env(safe-area
 .team-evidence p{margin:0 0 12px}
 .team-evidence img{width:100%;height:auto;border:1px solid #6c8d6966}
 .team-evidence figcaption a{display:block;padding:12px 0;min-height:44px;text-underline-offset:3px}
+.bowling-warning{margin:24px 0;padding:18px 16px;background:#fff0d6;color:#513f37;border:2px dashed #d99772;border-radius:15px;box-shadow:3px 4px 0 #102f2b}
+.warning-heading{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+.warning-skull{display:grid;place-items:center;flex-shrink:0;width:48px;height:48px;background:#f8d5c6;border:1px solid #e5ad92;border-radius:15px;font-size:28px;transform:rotate(-8deg)}
+.warning-tag{display:block;font-size:10px;letter-spacing:.5px;color:#76564a}
+.bowling-warning h4{margin:2px 0 0;font-size:19px;line-height:1.4;color:#513f37}
+.bowling-warning p{font-size:13px;line-height:1.8}
+.bowling-warning strong{color:#9b402f}
+.warning-thresholds{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0}
+.warning-thresholds>span{padding:5px 8px;background:#f6dfb8;border-radius:6px;font-size:11px}
+.bowling-warning .warning-note{font-size:11px;color:#715c4c}
